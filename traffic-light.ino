@@ -16,15 +16,13 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(pinRed, HIGH);
-  delay(RED_GREEN_DELAY);
-  digitalWrite(pinRed, LOW);
+  flashPin(pinRed, RED_GREEN_DELAY);
+  flashPin(pinYellow, YELLOW_DELAY);
+  flashPin(pinGreen, RED_GREEN_DELAY);
+}
 
-  digitalWrite(pinYellow, HIGH);
-  delay(YELLOW_DELAY);
-  digitalWrite(pinYellow, LOW);
-
-  digitalWrite(pinGreen, HIGH);
-  delay(RED_GREEN_DELAY);
-  digitalWrite(pinGreen, LOW);
+void flashPin(int pinLight, int timeDelay) {
+  digitalWrite(pinLight, HIGH);
+  delay(timeDelay);
+  digitalWrite(pinLight, LOW);
 }
